@@ -31,7 +31,7 @@ $opt .= "</select>";
         ?>  
 <?php 
           echo "Today's date is : "; 
-          $today = date("Y-m-d H:i a"); 
+          $today = date("Y-m-d"); 
           echo $today; 
 ?> 
           <input type="hidden" name="date" value="<?php echo $today; ?>">

@@ -16,12 +16,11 @@ if ($upass == ''){
         <?php
 }else{
 //create some sql statement             
-        $sql = "SELECT ID,e.FIRST_NAME,e.LAST_NAME,e.GENDER,e.EMAIL,e.PHONE_NUMBER,j.JOB_TITLE,l.PROVINCE,l.CITY,t.TYPE
+        $sql = "SELECT ID,e.FIRST_NAME,e.LAST_NAME,e.GENDER,e.EMAIL,e.PHONE_NUMBER,j.JOB_TITLE,l.PROVINCE,l.CITY,e.EMPLOYEE_ID
         FROM  `users` u
         join `employee` e on e.EMPLOYEE_ID=u.EMPLOYEE_ID
         JOIN `location` l ON e.LOCATION_ID=l.LOCATION_ID
         join `job` j on e.JOB_ID=j.JOB_ID
-        join `type` t ON t.TYPE_ID=u.TYPE_ID
         WHERE  `USERNAME` ='" . $users . "' AND  `PASSWORD` =  '" . $h_upass . "'";
         $result = $db->query($sql);
 
@@ -42,29 +41,51 @@ if ($upass == ''){
                 $_SESSION['JOB_TITLE']  =  $found_user['JOB_TITLE'];
                 $_SESSION['PROVINCE']  =  $found_user['PROVINCE']; 
                 $_SESSION['CITY']  =  $found_user['CITY']; 
-                $_SESSION['TYPE']  =  $found_user['TYPE'];
+                $_SESSION['EMPLOYEE_ID']  =  $found_user['EMPLOYEE_ID'];
                 $AAA = $_SESSION['MEMBER_ID'];
 
         //this part is the verification if admin or user ka
-        if ($_SESSION['TYPE']=='Admin'){
+        if ($_SESSION['EMPLOYEE_ID']=='1'){
            
              ?>    <script type="text/javascript">
                       //then it will be redirected to index.php
-                      alert("<?php echo  $_SESSION['FIRST_NAME']; ?> Welcome!");
                       window.location = "index.php";
                   </script>
              <?php        
            
-        }elseif ($_SESSION['TYPE']=='Cashier'){
+        }elseif ($_SESSION['EMPLOYEE_ID']=='2'){
            
              ?>    <script type="text/javascript">
                       //then it will be redirected to index.php
-                      alert("<?php echo  $_SESSION['FIRST_NAME']; ?> Welcome!");
                       window.location = "pos.php";
                   </script>
              <?php        
            
-        }
+        }elseif ($_SESSION['EMPLOYEE_ID']=='3'){
+           
+          ?>    <script type="text/javascript">
+                   //then it will be redirected to index.php
+                   window.location = "pos.php";
+               </script>
+          <?php        
+        
+     }elseif ($_SESSION['EMPLOYEE_ID']=='5'){
+           
+      ?>  <script type="text/javascript">
+               //then it will be redirected to index.php
+               window.location = "pos.php";
+           </script>
+      <?php        
+    
+ }elseif ($_SESSION['EMPLOYEE_ID']=='7'){
+           
+  ?>   <script type="text/javascript">
+           //then it will be redirected to index.php
+           window.location = "pos.php";
+       </script>
+  <?php        
+
+}
             } else {
             //IF theres no result
               ?>
