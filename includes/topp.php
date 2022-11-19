@@ -116,15 +116,16 @@
 
               <?php 
 
-                $query = 'SELECT ID, FIRST_NAME,LAST_NAME,USERNAME,PASSWORD, e.EMPLOYEE_ID
+                $query = 'SELECT ID, FIRST_NAME,LAST_NAME,USERNAME,PASSWORD, b.BRANCH_ID
                           FROM users u
                           JOIN employee e ON e.EMPLOYEE_ID=u.EMPLOYEE_ID
+                          JOIN branches b ON b.BRANCH_ID=b.BRANCH_ID
                           JOIN type t ON t.TYPE_ID=u.TYPE_ID';
                 $result = mysqli_query($db, $query) or die (mysqli_error($db));
       
                 while ($row = mysqli_fetch_assoc($result)) {
                           $a = $_SESSION['MEMBER_ID'];
-                          $bbb = $_SESSION['EMPLOYEE_ID'];
+                          $bbb = $_SESSION['BRANCH_ID'];
                 }
                           
             ?>

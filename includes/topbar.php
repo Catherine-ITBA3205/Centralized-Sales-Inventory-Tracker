@@ -29,7 +29,7 @@
 
         <li class="nav-item dropdown no-arrow">
           <a class="nav-link " href="index.php" role="button">
-              <div class="navbar-brand font-weight-bold text-white medium">Sales and Inventory System</div>
+              <div class="navbar-brand font-weight-bold text-white medium">Sales and Inventory System Main Branch</div>
               </a>
           </li>
   </ul>
