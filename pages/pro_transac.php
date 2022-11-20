@@ -15,12 +15,26 @@ include'../includes/connection.php';
         
               switch($_GET['action']){
                 case 'add':  
-                 for($i=0; $i < $qty; $i++){
-                    $query = "INSERT INTO product
+                // for($i=0; $i < $qty; $i++){
+                  $sql="SELECT * FROM product WHERE PRODUCT_CODE='$pc' AND BRANCH_ID='$bra'";
+                      $result = mysqli_query($db,$sql);
+                      $resultCheck=mysqli_num_rows($result);
+                      if($resultCheck > 0 ) {
+                      //do something to notify that there's a duplicate record
+
+                      echo '<script>alert("Warning! Duplicate record found.");</script>';
+                      } else {
+                      //dito mo lagay yung insert into query
+
+                      $query = "INSERT INTO product
                               (PRODUCT_ID, PRODUCT_CODE, NAME, DESCRIPTION, QTY_STOCK, PRICE, CATEGORY_ID, BRANCH_ID, DATE_STOCK_IN)
                               VALUES (Null,'{$pc}','{$name}','{$desc}','{$qty}',{$pr},{$cat},{$bra},'{$dats}')";
                     mysqli_query($db,$query)or die ('Error in updating product in Database '.$query);
-                    }
+                      }
+
+
+                    
+                    //}
                     
                 break;
               }

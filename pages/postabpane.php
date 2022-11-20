@@ -4,7 +4,7 @@
                               <!-- 1ST TAB -->
                                 <div class="tab-pane fade in mt-2" id="cakes">
                                   <div class="row">
-                                      <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=1 GROUP BY BRANCH_ID';
+                                      <?php  $query = 'SELECT * FROM product WHERE CATEGORY_ID=1 GROUP BY PRODUCT_CODE ORDER BY PRODUCT_CODE ASC';
                                         $result = mysqli_query($db, $query);
 
                                         if ($result):
