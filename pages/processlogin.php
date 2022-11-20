@@ -62,7 +62,31 @@ if ($upass == ''){
                   </script>
              <?php        
            
-        }
+        }elseif ($_SESSION['BRANCH_ID']=='21'){
+           
+          ?>    <script type="text/javascript">
+                   //then it will be redirected to index.php
+                   window.location = "pos.php";
+               </script>
+          <?php        
+        
+     }elseif ($_SESSION['BRANCH_ID']=='22'){
+           
+      ?>    <script type="text/javascript">
+               //then it will be redirected to index.php
+               window.location = "pos.php";
+           </script>
+      <?php        
+    
+ }elseif ($_SESSION['BRANCH_ID']=='23'){
+           
+  ?>    <script type="text/javascript">
+           //then it will be redirected to index.php
+           window.location = "pos.php";
+       </script>
+  <?php        
+
+}
             } else {
             //IF theres no result
               ?>

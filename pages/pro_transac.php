@@ -21,6 +21,7 @@ include'../includes/connection.php';
                               VALUES (Null,'{$pc}','{$name}','{$desc}','{$qty}',{$pr},{$cat},{$bra},'{$dats}')";
                     mysqli_query($db,$query)or die ('Error in updating product in Database '.$query);
                     }
+                    
                 // break;
               // }
             ?>

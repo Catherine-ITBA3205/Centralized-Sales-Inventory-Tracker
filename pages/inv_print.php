@@ -49,13 +49,15 @@ include'../includes/connection.php';
 				<th>Name</th>
 				<th>Quantity</th>
 				<th>Category</th>
+				<th>Branch</th>
 				<th>Date Stock In</th>
             </tr>
 		</thead>
 		<tbody>
 			<?php
                 include'../includes/connection.php';
-                $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME, QTY_STOCK, CNAME, DATE_STOCK_IN FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID GROUP BY PRODUCT_CODE';
+                $query = 'SELECT PRODUCT_ID, PRODUCT_CODE, NAME, QTY_STOCK, CNAME, COMPANY_NAME, DATE_STOCK_IN 
+				FROM product p join category c on p.CATEGORY_ID=c.CATEGORY_ID join branches b on p.BRANCH_ID=b.BRANCH_ID GROUP BY PRODUCT_CODE';
                 $result = mysqli_query($db, $query) or die (mysqli_error($db));
 
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -68,6 +70,7 @@ include'../includes/connection.php';
 				<td style="text-align:center;"><?php echo $row['NAME']?></td>
 				<td style="text-align:center;"><?php echo $row['QTY_STOCK']?></td>
 				<td style="text-align:center;"><?php echo $row['CNAME']?></td>
+				<td style="text-align:center;"><?php echo $row['COMPANY_NAME']?></td>
                 <td style="text-align:center;"><?php echo $row['DATE_STOCK_IN']?></td>
 			</tr>
 			

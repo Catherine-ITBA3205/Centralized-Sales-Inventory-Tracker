@@ -85,7 +85,7 @@
       <div class="sidebar-brand-icon">
           <img src="annshome.ico" height="110" width="110">
         </div>
-        <div class="sidebar-brand-text text-white mx-3">Sales and Inventory System</div>
+        <div class="sidebar-brand-text text-white mx-3"><?php echo  $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME'] ;?> Sales and Inventory System</div>
       </a>
 
           <!-- Topbar Navbar -->
