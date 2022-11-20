@@ -48,7 +48,7 @@ window.onload = function() {
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body"><?php echo  $_SESSION['FIRST_NAME']; ?> are you sure do you want to logout?</div>
+        <div class="modal-body"><?php echo  $_SESSION['FIRST_NAME']. ' '.$_SESSION['LAST_NAME']; ?>, are you sure do you want to logout?</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
           <a class="btn btn-success" href="logout.php">Logout</a>

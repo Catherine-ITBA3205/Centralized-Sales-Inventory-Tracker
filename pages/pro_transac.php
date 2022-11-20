@@ -15,15 +15,15 @@ include'../includes/connection.php';
         
               switch($_GET['action']){
                 case 'add':  
-                // for($i=0; $i < $qty; $i++){
+                 for($i=0; $i < $qty; $i++){
                     $query = "INSERT INTO product
                               (PRODUCT_ID, PRODUCT_CODE, NAME, DESCRIPTION, QTY_STOCK, PRICE, CATEGORY_ID, BRANCH_ID, DATE_STOCK_IN)
                               VALUES (Null,'{$pc}','{$name}','{$desc}','{$qty}',{$pr},{$cat},{$bra},'{$dats}')";
                     mysqli_query($db,$query)or die ('Error in updating product in Database '.$query);
                     }
                     
-                // break;
-              // }
+                break;
+              }
             ?>
               <script type="text/javascript">window.location = "product.php";</script>
           </div>

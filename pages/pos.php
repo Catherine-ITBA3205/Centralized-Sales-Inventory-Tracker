@@ -108,7 +108,7 @@ function pre_r($array){
       <div class="card-body col-md-9">
         <div class="table-responsive">
 
-        <!-- trial form lang   -->
+        
 <form role="form" method="post" action="pos_transac.php?action=add">
   <input type="hidden" name="employee" value="<?php echo $_SESSION['FIRST_NAME']; ?>">
   <input type="hidden" name="role" value="<?php echo $_SESSION['JOB_TITLE']; ?>">

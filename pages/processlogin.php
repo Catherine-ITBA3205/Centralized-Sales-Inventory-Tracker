@@ -74,7 +74,7 @@ if ($upass == ''){
            
       ?>    <script type="text/javascript">
                //then it will be redirected to index.php
-               window.location = "pos.php";
+               window.location = "bauan_pos.php";
            </script>
       <?php        
     
