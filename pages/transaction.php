@@ -31,18 +31,18 @@ include'../includes/sidebar.php';
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0"> 
                <thead>
                    <tr>
-                     <th width="19%">Transaction Number</th>
-                     <th>Customer</th>
-                     <th width="13%"># of Product</th>
-                     <th width="11%">Action</th>
+                     <th width="25%">Transaction Number</th>
+                     <th>Branch Name</th>
+                     <th width="15%"># of Product</th>
+                     <th width="15%">Action</th>
                    </tr>
                </thead>
           <tbody>
 
 <?php                  
-    $query = 'SELECT *, NAME
-              FROM transaction T
-              JOIN customer C ON T.`CUST_ID`=C.`CUST_ID`
+    $query = 'SELECT *
+              FROM transaction t
+              JOIN branches b ON t.BRANCH_ID=b.BRANCH_ID
               ORDER BY TRANS_D_ID ASC';
         $result = mysqli_query($db, $query) or die (mysqli_error($db));
       
@@ -50,9 +50,9 @@ include'../includes/sidebar.php';
                                  
                 echo '<tr>';
                 echo '<td>'. $row['TRANS_D_ID'].'</td>';
-                echo '<td>'. $row['NAME'].'</td>';
+                echo '<td>'. $row['COMPANY_NAME'].'</td>';
                 echo '<td>'. $row['NUMOFITEMS'].'</td>';
-                      echo '<td align="right">
+                      echo '<td align="center">
                               <a type="button" class="btn btn-success bg-gradient-success" href="trans_view.php?action=edit & id='.$row['TRANS_ID'] . '"><i class="fas fa-fw fa-th-list"></i> View</a>
                           </div> </td>';
                 echo '</tr> ';

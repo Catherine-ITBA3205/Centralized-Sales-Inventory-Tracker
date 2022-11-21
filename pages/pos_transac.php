@@ -1,9 +1,9 @@
 <?php
 include'../includes/connection.php';
 session_start();
-
+              $lcid_branch = $_SESSION['BRANCH_ID'];
               $date = $_POST['date'];
-              $customer = $_POST['customer'];
+              //$customer = $_POST['customer'];
               $subtotal = $_POST['subtotal'];
               $lessvat = $_POST['lessvat'];
               $netvat = $_POST['netvat'];
@@ -31,7 +31,7 @@ session_start();
                     {
                       // echo "'{$today}', '".$_POST['name'][$i-1]."', '".$_POST['quantity'][$i-1]."', '".$_POST['price'][$i-1]."', '{$emp}', '{$rol}' <br>";
                       $newVal=(int)$_POST['prod_qty'][$i-1]-(int)$_POST['quantity'][$i-1];
-                      $sql="UPDATE `product` SET `QTY_STOCK` = '$newVal' WHERE NAME = '{$_POST['name'][$i-1]}'";
+                      $sql="UPDATE `product` SET `QTY_STOCK` = '$newVal' WHERE NAME = '{$_POST['name'][$i-1]}' AND BRANCH_ID='$lcid_branch'";
                       mysqli_query($db,$sql)or die (mysqli_error($db)); 
   
                       $query = "INSERT INTO `transaction_details`
@@ -42,8 +42,8 @@ session_start();
                        
                     }
                       $query111 = "INSERT INTO `transaction`
-                                 (`TRANS_ID`, `CUST_ID`, `NUMOFITEMS`, `SUBTOTAL`, `LESSVAT`, `NETVAT`, `ADDVAT`, `GRANDTOTAL`, `CASH`, `DATE`, `TRANS_D_ID`)
-                                 VALUES (Null,'{$customer}','{$countID}','{$subtotal}','{$lessvat}','{$netvat}','{$addvat}','{$total}','{$cash}','{$date}','{$today}')";
+                                 (`TRANS_ID`, `NUMOFITEMS`, `SUBTOTAL`, `LESSVAT`, `NETVAT`, `ADDVAT`, `GRANDTOTAL`, `CASH`, `DATE`, `TRANS_D_ID`)
+                                 VALUES (Null,  '{$countID}','{$subtotal}','{$lessvat}','{$netvat}','{$addvat}','{$total}','{$cash}','{$date}','{$today}')";
                       mysqli_query($db,$query111)or die (mysqli_error($db));
                   }else{
                     unset($_SESSION['pointofsale']);

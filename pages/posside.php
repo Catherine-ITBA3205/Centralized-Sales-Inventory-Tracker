@@ -16,7 +16,7 @@
              endforeach;
 
 //DROPDOWN FOR CUSTOMER
-$sql = "SELECT CUST_ID, NAME
+/*$sql = "SELECT CUST_ID, NAME
         FROM customer
         order by NAME asc";
 $res = mysqli_query($db, $sql) or die ("Error SQL: $sql");
@@ -27,6 +27,7 @@ $opt = "<select class='form-control'  style='border-radius: 0px;' name='customer
     $opt .= "<option value='".$row['CUST_ID']."'>".$row['NAME']."</option>";
   }
 $opt .= "</select>";
+*/
 // END OF DROP DOWN
         ?>  
 <?php 
@@ -35,13 +36,13 @@ $opt .= "</select>";
           echo $today; 
 ?> 
           <input type="hidden" name="date" value="<?php echo $today; ?>">
-          <div class="form-group row text-left mb-3">
+          <!--<div class="form-group row text-left mb-3">
             <div class="col-sm-12 text-primary btn-group">
-            <?php echo $opt; ?>
+            <?php //echo $opt; ?>
             <a  href="#" data-toggle="modal" data-target="#poscustomerModal" type="button" class="btn btn-primary bg-gradient-primary" style="border-radius: 0px;"><i class="fas fa-fw fa-plus"></i></a>
             </div>
 
-          </div>
+          </div-->
           <div class="form-group row mb-2">
 
             <div class="col-sm-5 text-left text-primary py-2">

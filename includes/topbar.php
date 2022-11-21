@@ -42,13 +42,13 @@
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
 
-            <li class="nav-item dropdown no-arrow">
+            <!--li class="nav-item dropdown no-arrow">
               <a class="nav-link" href="pos.php" role="button">
               <span class="mr-2 d-none d-lg-inline font-weight-bold text-white medium">POS</span>
               </a>
             </li>
 
-            <div class="topbar-divider d-none d-sm-block"></div>
+            <div class="topbar-divider d-none d-sm-block"></div-->
 
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">

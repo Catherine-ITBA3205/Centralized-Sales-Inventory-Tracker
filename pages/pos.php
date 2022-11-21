@@ -80,16 +80,22 @@ function pre_r($array){
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs">
                               <li class="nav-item">
-                                <a class="nav-link font-weight-bold text-dark " href="#" data-target="#cakes" data-toggle="tab">Cakes</a>
+                                <a class="nav-link font-weight-bold text-dark " href="#" data-target="#cakes" data-toggle="tab">Whole Cakes</a>
                               </li>
                               <li class="nav-item">
                                 <a class="nav-link font-weight-bold text-dark" href="#cookies" data-target="#cookies" data-toggle="tab">Cookies</a>
                               </li>
                               <li class="nav-item">
-                                <a class="nav-link font-weight-bold text-dark" href="#cupcakes" data-toggle="tab">Cupcakes</a>
+                                <a class="nav-link font-weight-bold text-dark" href="#cupcakes" data-target="#cupcakes" data-toggle="tab">Cupcakes</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link font-weight-bold text-dark" href="#pastries" data-target="#pastries" data-toggle="tab">Pastries</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link font-weight-bold text-dark" href="#minicakes" data-toggle="tab">Mini Cakes</a>
                               </li>
                               <li class="nav-item ">
-                                <a class="nav-link font-weight-bold text-dark" href="#pastries" data-toggle="tab">Pastries</a>
+                                <a class="nav-link font-weight-bold text-dark" href="#slicecakes" data-toggle="tab">Slice Cakes</a>
                               </li>
                             </ul>
 

@@ -118,10 +118,10 @@
           <span>Transaction</span></a>
       </li>
 
-      <li class="nav-item">
+      <!--li class="nav-item">
         <a class="nav-link" href="customer.php">
           <i class="fas fa-fw fa-users"></i>
-          <span>Customer</span></a>
+          <span>Customer</span></a-->
       </li>
 
       <li class="nav-item">
